@@ -1,5 +1,12 @@
-var builder = WebApplication.CreateBuilder(args);
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using E_Tuition.Data;
+using E_Tuition.Areas.Identity.Data;
 
+var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("TuitionContextConnection");builder.Services.AddDbContext<TuitionContext>(options =>
+    options.UseSqlServer(connectionString));builder.Services.AddDefaultIdentity<TuitionUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<TuitionContext>();
 // Add services to the container.
 builder.Services.AddRazorPages();
 
@@ -17,7 +24,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();
