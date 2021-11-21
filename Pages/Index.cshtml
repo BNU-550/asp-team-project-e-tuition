@@ -1,0 +1,35 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<!--Parent Sign In-->
+<div class="text-center">
+    <h1 class="display-4">@Model.Message</h1>
+    <p>Learn about the curriculum <a href="https://www.gov.uk/national-curriculum">Here</a></p>
+
+
+<form method="post" class="mx-auto" style="width:200px">
+    <h2>Login</h2>
+        <p class="col-sm-2">
+            <label>Name</label>
+            <input type="text" asp-for="FullName" required="true" placeholder="Enter your name" />
+        </p>
+        <p class="col-sm-2">
+            <label>Email</label>
+            <input type="email" name="Email" required="true" placeholder="Enter your email address" />
+        </p>
+        <p class="col-sm-2">
+            <button type="submit" class="btn-btn-primary">
+                Login
+            </button>
+        </p>
+
+        <a href="https://localhost:7096/Privacy">Create an account</a>
+    </form>
+</div>
+
+<p class="col-sm-12">
+    @ViewData["Message"]
+</p>
+

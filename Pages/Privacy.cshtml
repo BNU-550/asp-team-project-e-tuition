@@ -1,0 +1,48 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Create an account";
+}
+<h1>@ViewData["Title"]</h1>
+
+<!--Parent create an account-->
+
+<form method="post" class="mx-auto" style="width:200px">
+    <h2>Sign Up</h2>
+        <p class="col-sm-2">
+            <label>First name</label>
+            <input type="text" asp-for="Person.FirstName" required="true" placeholder="Enter your first name" />
+        </p>
+
+        <p class="nav-item">
+            <label>Last name</label>
+            <input type="text" asp-for="Person.LastName" required="true" placeholder="Enter your last name" />
+        </p>
+
+         <p class="col-sm-2">
+            <label>Email</label>
+            <input type="email" name="Email" required="true" placeholder="Enter your email address" />
+        </p>
+
+         <p class="col-sm-2">
+            <label>Mobile number</label>
+            <input type="number" asp-for="Person.MobileNumber" required="true" placeholder="Enter your mobile number" />
+        </p>
+
+         <p class="col-sm-2">
+            <label>Address</label>
+            <input type="text" asp-for="Person.Address" required="true" placeholder="Enter your address" />
+        </p>
+
+        <p class="col-sm-2"> 
+            <button type="submit" class="btn-btn-primary">
+                Register
+            </button>
+        </p>
+    </form>
+</div>
+
+<p class="col-sm-12">
+    @ViewData["Message"]
+</p>
+
