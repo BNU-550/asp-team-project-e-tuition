@@ -6,7 +6,10 @@ using Microsoft.AspNetCore.Identity;
 
 namespace E_Tuition.Areas.Identity.Data;
 
-// Add profile data for application users by adding properties to the TuitionUser class
+/// <summary>
+///  Add profile data for application users by adding properties to the 
+///  TuitionUser class
+/// </summary>
 public class TuitionUser : IdentityUser
 {
 }
