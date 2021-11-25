@@ -3,16 +3,16 @@ using System.ComponentModel.DataAnnotations;
 
 namespace E_Tuition.Models
 {
-    public class TutorReview:Person
+    public class TutorReview
     {
         [StringLength(500), DisplayName("Review"), DataType(DataType.MultilineText)]
         public string ReviewText { get; set; }
 
-        [DisplayName("Rating")]
+        [DisplayName("Rating"), Range(1,5)]
         public int Rating { get; set; }
 
-        public int PersonId { get; set; }
+        public Tutor Tutor { get; set; }
 
-        public int TutorId { get; set; }
+        public Person Parent { get; set; }
     }
 }

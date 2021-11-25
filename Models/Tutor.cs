@@ -20,7 +20,7 @@ namespace E_Tuition.Models
         [StringLength(255)]
         public string ImageURL { get; set; }
 
-        [StringLength(255)]
+        [StringLength(255), DataType(DataType.MultilineText)]
         public string Bio { get; set; }
 
         [DataType(DataType.Currency), Required, DisplayName("Cost per hour"), Range(15,20)]

@@ -19,10 +19,12 @@ namespace E_Tuition.Models
         [Required, DisplayName("Student")]
         public int StudentId { get; set; }
 
+        [DataType(DataType.Date)]
         public DateTime StartDate { get; set; }
 
         public int NoRepeat { get; set; }
 
+        [Range(1,4)]
         public int KeyStage { get; set; }
 
         public bool FaceToFace { get; set; }
@@ -30,8 +32,9 @@ namespace E_Tuition.Models
         public bool Online { get; set; }
 
         //navigation property
-        public Person Parent { get; set; }
 
-        public Person Student { get; set; }
+        public virtual TimeSlot TimeSlot { get; set; }
+
+        public virtual Student Student { get; set; }
     }
 }

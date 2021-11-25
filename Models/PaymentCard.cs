@@ -3,11 +3,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace E_Tuition.Models
 {
-    public class PaymentCard : Person
+    public class PaymentCard
     {
         public int Id { get; set; }
-
-        public int PersonId { get; set; }
 
         [StringLength(16), Required, DisplayName("Card number")]
         public string CardNumber { get; set; }
@@ -18,7 +16,7 @@ namespace E_Tuition.Models
         [Range(1,12), Required, DisplayName("Expiry Month")]
         public int ExpiryMonth { get; set; }
 
-
+        [Range(2021,2030), Required]
         public int ExpiryYear { get; set; }
 
 

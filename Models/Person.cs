@@ -17,12 +17,13 @@ namespace E_Tuition.Models
         [StringLength(15), Required, DisplayName("Mobile")]
         public string MobileNumber { get; set; }
 
-        public int AddressId { get; set; }
 
         //Navigation property
         public virtual Address Address { get; set; }
 
         public string FullName { get { return FirstName + " " + LastName; } }
+
+        public virtual PaymentCard PaymentCard { get; set; }
 
 
     }

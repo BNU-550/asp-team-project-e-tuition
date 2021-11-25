@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace E_Tuition.Models
 {
@@ -9,9 +10,10 @@ namespace E_Tuition.Models
         public int Id { get; set; }
 
         [DataType(DataType.Currency), Required]
+        [Column(TypeName = "money")]
         public decimal Salary { get; set; }
 
-        [DisplayName("Job Title")]
-        public int JobTitle { get; set; }
+        [DisplayName("Job Title"), StringLength(30), Required]
+        public string JobTitle { get; set; }
     }
 }
