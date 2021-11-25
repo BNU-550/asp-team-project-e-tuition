@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace E_Tuition.Models
 {
@@ -10,7 +12,7 @@ namespace E_Tuition.Models
         [StringLength(30), Required]
         public string Degree { get; set; }
 
-        [StringLength(15), Required]
+        [StringLength(15), Required, DisplayName("Mobile")]
         public string MobileNumber { get; set; }
 
         public bool PGCE { get; set; }
@@ -21,7 +23,8 @@ namespace E_Tuition.Models
         [StringLength(255)]
         public string Bio { get; set; }
 
-        [DataType(DataType.Currency), Required]
+        [DataType(DataType.Currency), Required, DisplayName("Cost per hour"), Range(15,20)]
+        [Column(TypeName = "money")]
         public decimal Cost { get; set; }
     }
 }

@@ -2,9 +2,11 @@
 
 namespace E_Tuition.Models
 {
-    public class Address
+    public class Address:Person
     {
         public int Id { get; set; }
+
+        public int PaymentId { get; set; }
         
         [StringLength(20), Required]
         public string HouseNumber { get; set; }
