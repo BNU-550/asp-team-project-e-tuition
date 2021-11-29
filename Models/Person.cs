@@ -17,6 +17,7 @@ namespace E_Tuition.Models
         [StringLength(15), Required, DisplayName("Mobile")]
         public string MobileNumber { get; set; }
 
+        public bool IsStudent { get; set; }
 
         //Navigation property
         public virtual Address Address { get; set; }
@@ -24,6 +25,8 @@ namespace E_Tuition.Models
         public string FullName { get { return FirstName + " " + LastName; } }
 
         public virtual PaymentCard PaymentCard { get; set; }
+
+    
 
 
     }

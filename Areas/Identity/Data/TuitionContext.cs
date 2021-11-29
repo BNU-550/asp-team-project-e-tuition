@@ -1,4 +1,5 @@
 ﻿using E_Tuition.Areas.Identity.Data;
+using E_Tuition.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -11,7 +12,15 @@ public class TuitionContext : IdentityDbContext<TuitionUser>
         : base(options)
     {
     }
+    public DbSet<Person> People { get; set; }
 
+    public DbSet<Staff> Staff { get; set; }
+
+    public DbSet<Tutor> Tutors { get; set; }
+
+    public DbSet<TimeSlot> TimeSlot { get; set; }
+
+    public DbSet<Lesson> Lessons { get; set; }
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
